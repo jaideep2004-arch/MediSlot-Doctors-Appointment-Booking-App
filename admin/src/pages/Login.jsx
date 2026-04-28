@@ -21,7 +21,7 @@ const Login = () => {
 
     if (state === 'Admin') {
 
-      const { data } = await axios.post(backendUrl + '/api/admin/login', { email, password })
+      const { data } = await axios.post("https://medislot-doctors-appointment-booking-app.onrender.com" + '/api/admin/login', { email, password })
       if (data.success) {
         setAToken(data.token)
         localStorage.setItem('aToken', data.token)
@@ -31,7 +31,7 @@ const Login = () => {
 
     } else {
 
-      const { data } = await axios.post(backendUrl + '/api/doctor/login', { email, password })
+      const { data } = await axios.post("https://medislot-doctors-appointment-booking-app.onrender.com" + '/api/doctor/login', { email, password })
       if (data.success) {
         setDToken(data.token)
         localStorage.setItem('dToken', data.token)
